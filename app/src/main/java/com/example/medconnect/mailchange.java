@@ -26,9 +26,9 @@ public class mailchange extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 String email = newmail.getText().toString();
-                if(isValidEmail(email)){
+                if (isValidEmail(email)) {
                     Toast.makeText(view.getContext(), "Email is valid", Toast.LENGTH_LONG).show();
-                }else{
+                } else {
                     Toast.makeText(view.getContext(), "Email is invalid", Toast.LENGTH_LONG).show();
                 }
             }

@@ -32,7 +32,7 @@ public class singup extends AppCompatActivity {
 
     private Button b;
     private EditText firstname;
-   // private EditText lastname;
+    // private EditText lastname;
     private EditText email;
     private EditText phone;
     private EditText emiratesid;
@@ -43,7 +43,7 @@ public class singup extends AppCompatActivity {
     private RadioButton Male;
     private RadioButton Female;
     private EditText password;
-    String gender="";
+    String gender = "";
 
 
     FirebaseDatabase database;
@@ -54,26 +54,24 @@ public class singup extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_singup);
 
-        firstname = (EditText)findViewById(R.id.fn);
-       // lastname = (EditText)findViewById(R.id.ln);
-        email = (EditText)findViewById(R.id.ml);
-        phone = (EditText)findViewById(R.id.ph);
-        emiratesid= (EditText)findViewById(R.id.eid);
-        insuranceid = (EditText)findViewById(R.id.inid);
-        address1 = (EditText)findViewById(R.id.ad1);
-        address2 = (EditText)findViewById(R.id.ad2);
-        password = (EditText)findViewById(R.id.passw);
-        Gender = (TextView)findViewById(R.id.gender);
-        Male = (RadioButton)findViewById(R.id.male);
-        Female = (RadioButton)findViewById(R.id.female);
-        database=FirebaseDatabase.getInstance();
-        db1=database.getReference("Records");
+        firstname = (EditText) findViewById(R.id.fn);
+        // lastname = (EditText)findViewById(R.id.ln);
+        email = (EditText) findViewById(R.id.ml);
+        phone = (EditText) findViewById(R.id.ph);
+        emiratesid = (EditText) findViewById(R.id.eid);
+        insuranceid = (EditText) findViewById(R.id.inid);
+        address1 = (EditText) findViewById(R.id.ad1);
+        address2 = (EditText) findViewById(R.id.ad2);
+        password = (EditText) findViewById(R.id.passw);
+        Gender = (TextView) findViewById(R.id.gender);
+        Male = (RadioButton) findViewById(R.id.male);
+        Female = (RadioButton) findViewById(R.id.female);
+        database = FirebaseDatabase.getInstance();
+        db1 = database.getReference("Records");
 
 
-
-
-        b=(Button)findViewById(R.id.nxt);
-       b.setOnClickListener(new View.OnClickListener() {
+        b = (Button) findViewById(R.id.nxt);
+        b.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 final Users user = new Users(firstname.getText().toString(),
@@ -90,24 +88,22 @@ public class singup extends AppCompatActivity {
                 db1.addListenerForSingleValueEvent(new ValueEventListener() {
                     @Override
                     public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
-                        if(dataSnapshot.child(user.getEmiratedid()).exists()) {
+                        if (dataSnapshot.child(user.getEmiratedid()).exists()) {
                             Toast.makeText(singup.this, "Already Exist", Toast.LENGTH_SHORT).show();
-                        }
-                        else{
-                            if(!email.getText().toString().equals(""))
-                                if(!firstname.getText().toString().equals(""))
-                                    if(!insuranceid.getText().toString().equals(""))
-                                        if(!phone.getText().toString().equals(""))
-                                            if(!address1.getText().toString().equals(""))
-                                                if(!address2.getText().toString().equals(""))
-                                                    if(!password.getText().toString().equals(""))
-                                                    {
+                        } else {
+                            if (!email.getText().toString().equals(""))
+                                if (!firstname.getText().toString().equals(""))
+                                    if (!insuranceid.getText().toString().equals(""))
+                                        if (!phone.getText().toString().equals(""))
+                                            if (!address1.getText().toString().equals(""))
+                                                if (!address2.getText().toString().equals(""))
+                                                    if (!password.getText().toString().equals("")) {
                                                         db1.child(user.getEmiratedid()).setValue(user);
                                                         Toast.makeText(singup.this, "successful", Toast.LENGTH_SHORT).show();
                                                         Intent in = new Intent(singup.this, MainActivity.class);
+                                                        in.putExtra("Key", user);
                                                         startActivity(in);
-                                                    }
-                                                    else
+                                                    } else
                                                         Toast.makeText(singup.this, "Please fill the fields", Toast.LENGTH_SHORT).show();
                                                 else
                                                     Toast.makeText(singup.this, "Please fill the fields", Toast.LENGTH_SHORT).show();
@@ -133,10 +129,10 @@ public class singup extends AppCompatActivity {
                 });
             }
         });
-        }
-    public void main(View view)
-    {
-        startActivity(new Intent(singup.this,MainActivity.class));
+    }
+
+    public void main(View view) {
+        startActivity(new Intent(singup.this, MainActivity.class));
         finish();
     }
 }

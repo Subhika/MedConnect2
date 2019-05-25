@@ -1,9 +1,9 @@
 package com.example.medconnect;
 
 public class appointmenthelp {
-    private String hosp,dep,time,date;
+    private String hosp, dep, time, date;
 
-    public appointmenthelp(){
+    public appointmenthelp() {
 
     }
 

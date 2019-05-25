@@ -29,24 +29,23 @@ public class codechangepass extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_codechangepass);
 
-        passfirst = (EditText)findViewById(R.id.pass1);
-        passsecond = (EditText)findViewById(R.id.pass2);
-        info= (TextView)findViewById(R.id.infotext);
-        Submit = (Button)findViewById(R.id.sum_pass);
+        passfirst = (EditText) findViewById(R.id.pass1);
+        passsecond = (EditText) findViewById(R.id.pass2);
+        info = (TextView) findViewById(R.id.infotext);
+        Submit = (Button) findViewById(R.id.sum_pass);
         info.setVisibility(View.INVISIBLE);
         Submit.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                if(passfirst.getText().toString().length()<8 &&!isValidPassword(passfirst.getText().toString())){
+                if (passfirst.getText().toString().length() < 8 && !isValidPassword(passfirst.getText().toString())) {
                     Toast.makeText(codechangepass.this, "Password mismatch with validation", Toast.LENGTH_LONG).show();
-                }else{
+                } else {
                     if (passfirst.getText().toString().equals(passsecond.getText().toString())) {
                         info.setVisibility(TextView.INVISIBLE);
                         Toast.makeText(codechangepass.this, "Updation successfull", Toast.LENGTH_SHORT).show();
                         //Intent i = new Intent(codechangepass.this,changeinsurance.class);
                         //startActivity(i);
-                    }
-                    else
+                    } else
                         info.setVisibility(TextView.VISIBLE);
 
                 }
@@ -56,6 +55,7 @@ public class codechangepass extends AppCompatActivity {
 
 
     }
+
     public static boolean isValidPassword(final String password) {
 
         Pattern pattern;

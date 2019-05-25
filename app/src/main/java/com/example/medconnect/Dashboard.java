@@ -18,9 +18,10 @@ public class Dashboard extends AppCompatActivity {
     private TextView problems;
     private ImageButton prescription;
     private ImageButton statofdelivery;
-    private  Button logout;
+    private Button logout;
     private Button settings;
     private ImageButton hospitallist;
+    private static Users user;
     Toolbar toolbar;
 
     @Override
@@ -31,14 +32,12 @@ public class Dashboard extends AppCompatActivity {
         consultation = (ImageButton) findViewById(R.id.appointment1);
         problems = (TextView) findViewById(R.id.fap);
         prescription = (ImageButton) findViewById(R.id.presb);
-        hospitallist =(ImageButton) findViewById(R.id.hoslist);
+        hospitallist = (ImageButton) findViewById(R.id.hoslist);
         statofdelivery = (ImageButton) findViewById(R.id.sdb);
         logout = (Button) findViewById(R.id.logoutb);
         settings = (Button) findViewById(R.id.set);
 
-
-        final String user1=getIntent().getStringExtra("Key");
-
+        user = (Users) getIntent().getSerializableExtra("Key");
 
         logout.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -52,15 +51,15 @@ public class Dashboard extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent in = new Intent(Dashboard.this, appointment.class);
-                in.putExtra("usern1",user1);
+                in.putExtra("User", user);
                 startActivity(in);
             }
         });
 
-     hospitallist.setOnClickListener(new View.OnClickListener() {
+        hospitallist.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent in = new Intent(Dashboard.this,hospital.class );
+                Intent in = new Intent(Dashboard.this, hospital.class);
             }
         });
 
@@ -76,6 +75,5 @@ public class Dashboard extends AppCompatActivity {
     }
 
 
-
-    }
+}
 

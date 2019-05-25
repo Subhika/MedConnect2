@@ -21,12 +21,12 @@ public class settings extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_settings);
 
-        password = (ImageButton)findViewById(R.id.pass);
-        location = (ImageButton)findViewById(R.id.presb);
-        creditcard = (ImageButton)findViewById(R.id.creditcard);
-        insurancecard = (ImageButton)findViewById(R.id.insurance);
-        phone = (ImageButton)findViewById(R.id.hoslist);
-        email = (ImageButton)findViewById(R.id.mail);
+        password = (ImageButton) findViewById(R.id.pass);
+        location = (ImageButton) findViewById(R.id.presb);
+        creditcard = (ImageButton) findViewById(R.id.creditcard);
+        insurancecard = (ImageButton) findViewById(R.id.insurance);
+        phone = (ImageButton) findViewById(R.id.hoslist);
+        email = (ImageButton) findViewById(R.id.mail);
 
 
         password.setOnClickListener(new View.OnClickListener() {
@@ -37,7 +37,7 @@ public class settings extends AppCompatActivity {
             }
         });
 
-       email.setOnClickListener(new View.OnClickListener() {
+        email.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Intent in = new Intent(settings.this, mailchange.class);
@@ -71,7 +71,7 @@ public class settings extends AppCompatActivity {
         location.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-               // Intent in = new Intent(settings.this, Addressdelivery.class);
+                // Intent in = new Intent(settings.this, Addressdelivery.class);
                 //startActivity(in);
 
             }

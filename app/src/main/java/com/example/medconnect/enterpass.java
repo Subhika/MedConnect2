@@ -26,26 +26,25 @@ public class enterpass extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_enterpass);
 
-        passfirst = (EditText)findViewById(R.id.pass1);
-        passsecond = (EditText)findViewById(R.id.pass2);
-        info= (TextView)findViewById(R.id.infotext);
-        Submit = (Button)findViewById(R.id.sum_pass);
+        passfirst = (EditText) findViewById(R.id.pass1);
+        passsecond = (EditText) findViewById(R.id.pass2);
+        info = (TextView) findViewById(R.id.infotext);
+        Submit = (Button) findViewById(R.id.sum_pass);
         info.setVisibility(View.INVISIBLE);
         Submit.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                if(passfirst.getText().toString().length()<8 &&!isValidPassword(passfirst.getText().toString())){
+                if (passfirst.getText().toString().length() < 8 && !isValidPassword(passfirst.getText().toString())) {
                     Toast.makeText(enterpass.this, "Password mismatch with validation", Toast.LENGTH_LONG).show();
-                }else{
+                } else {
                     if (passfirst.getText().toString().equals(passsecond.getText().toString())) {
                         info.setVisibility(TextView.INVISIBLE);
 
                         Toast.makeText(enterpass.this, "Updation successfull", Toast.LENGTH_SHORT).show();
-                        Intent in = new Intent(enterpass.this,signupreg.class);
+                        Intent in = new Intent(enterpass.this, signupreg.class);
                         startActivity(in);
 
-                    }
-                    else
+                    } else
                         info.setVisibility(TextView.VISIBLE);
 
                 }
@@ -55,6 +54,7 @@ public class enterpass extends AppCompatActivity {
 
 
     }
+
     public static boolean isValidPassword(final String password) {
 
         Pattern pattern;
@@ -64,7 +64,6 @@ public class enterpass extends AppCompatActivity {
         matcher = pattern.matcher(password);
 
         return matcher.matches();
-
 
 
     }

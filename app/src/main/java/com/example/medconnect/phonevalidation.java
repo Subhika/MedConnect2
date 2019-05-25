@@ -25,13 +25,12 @@ public class phonevalidation extends AppCompatActivity {
             public void onClick(View view) {
                 String regexStr = "^[0][0-9]{10,12}$";
 
-                String number=phone_num.getText().toString();
+                String number = phone_num.getText().toString();
 
-                if(phone_num.getText().toString().length()<10 || number.length()>13 || number.matches(regexStr)==false  ) {
-                    Toast.makeText(phonevalidation.this, "Please enter a valid phone number",Toast.LENGTH_SHORT).show();
+                if (phone_num.getText().toString().length() < 10 || number.length() > 13 || number.matches(regexStr) == false) {
+                    Toast.makeText(phonevalidation.this, "Please enter a valid phone number", Toast.LENGTH_SHORT).show();
                     // am_checked=0;
-                }
-                else {
+                } else {
                     Intent i = new Intent(phonevalidation.this, MainActivity.class);
                     startActivity(i);
                 }

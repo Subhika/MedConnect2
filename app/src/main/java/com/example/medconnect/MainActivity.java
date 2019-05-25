@@ -108,7 +108,8 @@ public class MainActivity extends AppCompatActivity {
                         if (login.getPassword().equals(pass)) {
                             Toast.makeText(MainActivity.this, "Login Successful", Toast.LENGTH_SHORT).show();
                             Intent s = new Intent(getApplicationContext(), Dashboard.class);
-                            s.putExtra("Key", user);
+                            Users userData = new Users(user,pass);
+                            s.putExtra("Key", userData);
                             medid.setText("");
                             pass1.setText("");
                             startActivity(s);

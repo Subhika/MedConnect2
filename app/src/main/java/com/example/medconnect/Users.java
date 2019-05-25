@@ -15,6 +15,11 @@ public class Users implements Serializable {
 
     }
 
+    public Users(String login, String password){
+        this.insuranceid = login;
+        this.password = password;
+    }
+
 
     public Users(String firstname, String email, String insuranceid, String emiratedid, String phonenumber, String gender, String password, String address1, String address2) {
         this.firstname = firstname;

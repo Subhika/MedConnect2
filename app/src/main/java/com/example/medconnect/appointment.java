@@ -43,10 +43,11 @@ public class appointment extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_appointment);
-        database = FirebaseDatabase.getInstance();
-        db = database.getReference("Appointment");
 
-        user = (Users) getIntent().getSerializableExtra("Key");
+        user = (Users) getIntent().getSerializableExtra("User");
+
+        database = FirebaseDatabase.getInstance();
+        db = database.getReference("Records").child(user.getInsuranceid()).child("Appointments");
 
         depname = (Spinner) findViewById(R.id.department);
 
@@ -107,31 +108,29 @@ public class appointment extends AppCompatActivity {
                     Toast.makeText(appointment.this, "Updated Successfully", Toast.LENGTH_SHORT).show();
                     mp.start();
                     finish();
-                    // setval(st,sss,ty,da);
+                     setval(st,sss,ty,da);
                 }
             }
         });
     }
-       /*public void setval(String h,String d, String t, String dy){
-        final appointmenthelp a= new appointmenthelp(h,d,t,dy);
-            db.addListenerForSingleValueEvent(new ValueEventListener() {
-                @Override
-                public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
-                    if(dataSnapshot.child(user).exists()){
-                        Toast.makeText(appointment.this, "Appointment exists!", Toast.LENGTH_SHORT).show();
-                    }
-                    else{
-                        db.child(user).setValue(a);
-                        Toast.makeText(appointment.this, "successful", Toast.LENGTH_SHORT).show();
-                    }
+
+    public void setval(String h, String d, String t, String dy) {
+        final appointmenthelp a = new appointmenthelp(h, d, t, dy);
+        db.addListenerForSingleValueEvent(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                if (dataSnapshot.exists()) {
+                    Toast.makeText(appointment.this, "Appointment exists!", Toast.LENGTH_SHORT).show();
+                } else {
+                    db.setValue(a);
+                    Toast.makeText(appointment.this, "successful", Toast.LENGTH_SHORT).show();
                 }
+            }
 
-                @Override
-                public void onCancelled(@NonNull DatabaseError databaseError) {
+            @Override
+            public void onCancelled(@NonNull DatabaseError databaseError) {
 
-                }
-            });
-        }*/
-
-
+            }
+        });
+    }
 }

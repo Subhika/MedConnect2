@@ -4,59 +4,63 @@ import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
-import android.widget.Button;
+import android.widget.ImageButton;
 
 public class settings extends AppCompatActivity {
 
-    private Button ch_mail;
-    private Button ch_pass;
-    private Button ch_phone;
-    private Button ch_insu;
-    private Button ch_loc;
+    private ImageButton password;
+    private ImageButton location;
+    private ImageButton creditcard;
+    private ImageButton insurancecard;
+    private ImageButton phone;
+    private ImageButton email;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_settings);
 
-        ch_mail = (Button)findViewById(R.id.c_mail);
-        ch_pass = (Button)findViewById(R.id.c_pass);
-        ch_phone = (Button)findViewById(R.id.c_phone);
-        ch_insu = (Button)findViewById(R.id.c_insu);
-        ch_loc = (Button)findViewById(R.id.c_loc);
+        password = (ImageButton)findViewById(R.id.pass);
+        location = (ImageButton)findViewById(R.id.presb);
+        creditcard = (ImageButton)findViewById(R.id.creditcard);
+        insurancecard = (ImageButton)findViewById(R.id.insurance);
+        phone = (ImageButton)findViewById(R.id.hoslist);
+        email = (ImageButton)findViewById(R.id.mail);
 
-        /*forgotp.setOnClickListener(new View.OnClickListener() {
+
+        password.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent in = new Intent(MainActivity.this, ForgotPassword.class);
+                Intent in = new Intent(settings.this, ForgotPassword.class);
                 startActivity(in);
             }
-        });*/
+        });
 
-        ch_mail.setOnClickListener(new View.OnClickListener() {
+       email.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent in = new Intent(settings.this, Change_Email.class);
+                Intent in = new Intent(settings.this, mailchange.class);
                 startActivity(in);
 
             }
         });
-        ch_pass.setOnClickListener(new View.OnClickListener() {
+        password.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Intent in = new Intent(settings.this, codechangepass.class);
                 startActivity(in);
             }
         });
-        ch_phone.setOnClickListener(new View.OnClickListener() {
+        phone.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                //Intent in = new Intent(settings.this, Change_Email.class);
-                //startActivity(in);
+                Intent in = new Intent(settings.this, phonevalidation.class);
+                startActivity(in);
 
             }
         });
-        ch_insu.setOnClickListener(new View.OnClickListener() {
+        insurancecard.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Intent in = new Intent(settings.this, changeinsurance.class);
@@ -64,10 +68,10 @@ public class settings extends AppCompatActivity {
 
             }
         });
-        ch_loc.setOnClickListener(new View.OnClickListener() {
+        location.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                //Intent in = new Intent(settings.this, Change_Email.class);
+               // Intent in = new Intent(settings.this, Addressdelivery.class);
                 //startActivity(in);
 
             }

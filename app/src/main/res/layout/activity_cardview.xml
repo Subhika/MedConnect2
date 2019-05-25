@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/anima"
-    tools:context=".settings">
+    tools:context=".cardview">
 
     <android.support.v7.widget.CardView
         android:id="@+id/cardView"
@@ -58,7 +58,7 @@
             android:layout_height="match_parent">
 
             <ImageButton
-                android:id="@+id/mail"
+                android:id="@+id/imageButton5"
                 android:layout_width="120dp"
                 android:layout_height="115dp"
                 android:layout_marginStart="8dp"
@@ -73,7 +73,6 @@
                 app:layout_constraintVertical_bias="0.163" />
 
             <TextView
-                android:id="@+id/mail"
                 android:layout_width="151dp"
                 android:layout_height="27dp"
                 android:layout_marginStart="8dp"
@@ -130,7 +129,7 @@
                 app:layout_constraintVertical_bias="0.163" />
 
             <TextView
-                android:id="@+id/place"
+                android:id="@+id/textView4"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="8dp"
@@ -138,9 +137,9 @@
                 android:layout_marginEnd="8dp"
                 android:layout_marginBottom="8dp"
                 android:text="Location"
-                android:textColor="#000"
                 android:textSize="20dp"
                 android:textStyle="bold"
+                android:textColor="#000"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
@@ -186,7 +185,7 @@
                 app:layout_constraintVertical_bias="0.163" />
 
             <TextView
-                android:id="@+id/cardcredit"
+                android:id="@+id/textView9"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="8dp"
@@ -194,10 +193,10 @@
                 android:layout_marginEnd="8dp"
                 android:layout_marginBottom="8dp"
                 android:text="Credit Card"
-                android:textAlignment="center"
-                android:textColor="#000"
-                android:textSize="20dp"
                 android:textStyle="bold"
+                android:textSize="20dp"
+                android:textColor="#000"
+                android:textAlignment="center"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
@@ -242,7 +241,7 @@
                 app:layout_constraintVertical_bias="0.163" />
 
             <TextView
-                android:id="@+id/pass"
+                android:id="@+id/textView10"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="8dp"
@@ -251,14 +250,13 @@
                 android:layout_marginBottom="8dp"
                 android:text="Password"
                 android:textAlignment="center"
-                android:textColor="#000"
-                android:textSize="20dp"
                 android:textStyle="bold"
+                android:textSize="20dp"
+                android:textColor="#000"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/pass"
-                app:layout_constraintVertical_bias="1.0" />
+                app:layout_constraintTop_toBottomOf="@+id/pass" />
 
         </android.support.constraint.ConstraintLayout>
     </android.support.v7.widget.CardView>
@@ -303,7 +301,7 @@
                 app:layout_constraintVertical_bias="0.163" />
 
             <TextView
-                android:id="@+id/phoneno"
+                android:id="@+id/textView11"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_below="@+id/TextView11"
@@ -368,7 +366,7 @@
                 app:layout_constraintVertical_bias="0.115" />
 
             <TextView
-                android:id="@+id/insurancecard"
+                android:id="@+id/insurance"
                 android:layout_width="119dp"
                 android:layout_height="wrap_content"
                 android:layout_below="@+id/textView12"

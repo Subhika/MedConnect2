@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "779558416986",
+    "firebase_url": "https://fir-test-98cb8.firebaseio.com",
+    "project_id": "fir-test-98cb8",
+    "storage_bucket": "fir-test-98cb8.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:779558416986:android:7b02a0be2e6f33e8",
+        "android_client_info": {
+          "package_name": "com.example.medconnect"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "779558416986-84rkbclrn2dhlo5o40m0e9195v71nga4.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.medconnect",
+            "certificate_hash": "72f5eea9d06a11eda1aa95b03e455f6cdb3b1468"
+          }
+        },
+        {
+          "client_id": "779558416986-f4kv77riea9u29vm5d3tg6mlfi6kkue4.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyC85R9hD9JWXOPEQnuzUbiGktWTN6m5PBs"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "779558416986-f4kv77riea9u29vm5d3tg6mlfi6kkue4.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

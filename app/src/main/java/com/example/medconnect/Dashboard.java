@@ -4,6 +4,7 @@ import android.content.Intent;
 import android.content.SharedPreferences;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.widget.Toolbar;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
@@ -13,31 +14,53 @@ import android.widget.TextView;
 
 public class Dashboard extends AppCompatActivity {
 
-    private Button consultation;
+    private ImageButton consultation;
     private TextView problems;
-    private Button prescription;
-    private Button statofdelivery;
-    ImageButton logout;
-    ImageButton settings;
+    private ImageButton prescription;
+    private ImageButton statofdelivery;
+    private  Button logout;
+    private Button settings;
+    private ImageButton hospitallist;
+    Toolbar toolbar;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_dashboard);
 
-        consultation = (Button) findViewById(R.id.conb);
+        consultation = (ImageButton) findViewById(R.id.appointment1);
         problems = (TextView) findViewById(R.id.fap);
-        prescription = (Button) findViewById(R.id.presb);
-        statofdelivery = (Button) findViewById(R.id.sdb);
-        logout = (ImageButton) findViewById(R.id.logoutb);
-        settings = (ImageButton) findViewById(R.id.set);
+        prescription = (ImageButton) findViewById(R.id.presb);
+        hospitallist =(ImageButton) findViewById(R.id.hoslist);
+        statofdelivery = (ImageButton) findViewById(R.id.sdb);
+        logout = (Button) findViewById(R.id.logoutb);
+        settings = (Button) findViewById(R.id.set);
+
+
+        final String user1=getIntent().getStringExtra("Key");
 
 
         logout.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent in = new Intent(Dashboard.this, Addressdelivery.class);
+                Intent in = new Intent(Dashboard.this, MainActivity.class);
                 startActivity(in);
+            }
+        });
+
+        consultation.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent in = new Intent(Dashboard.this, appointment.class);
+                in.putExtra("usern1",user1);
+                startActivity(in);
+            }
+        });
+
+     hospitallist.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent in = new Intent(Dashboard.this,hospital.class );
             }
         });
 

@@ -67,6 +67,7 @@ public class Dashboard extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent in = new Intent(Dashboard.this, settings.class);
+                in.putExtra("User", user);
                 startActivity(in);
             }
         });

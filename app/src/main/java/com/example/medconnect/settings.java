@@ -6,6 +6,9 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.ImageButton;
 
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+
 public class settings extends AppCompatActivity {
 
     private ImageButton password;
@@ -14,6 +17,9 @@ public class settings extends AppCompatActivity {
     private ImageButton insurancecard;
     private ImageButton phone;
     private ImageButton email;
+    private static Users user;
+    FirebaseDatabase database = FirebaseDatabase.getInstance();;
+    DatabaseReference db;
 
 
     @Override
@@ -28,11 +34,13 @@ public class settings extends AppCompatActivity {
         phone = (ImageButton) findViewById(R.id.hoslist);
         email = (ImageButton) findViewById(R.id.mail);
 
+        user = (Users) getIntent().getSerializableExtra("User");
 
         password.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent in = new Intent(settings.this, ForgotPassword.class);
+                in.putExtra("User", user);
                 startActivity(in);
             }
         });
@@ -41,6 +49,7 @@ public class settings extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 Intent in = new Intent(settings.this, mailchange.class);
+                in.putExtra("User", user);
                 startActivity(in);
 
             }
@@ -49,6 +58,7 @@ public class settings extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 Intent in = new Intent(settings.this, codechangepass.class);
+                in.putExtra("User", user);
                 startActivity(in);
             }
         });
@@ -56,6 +66,7 @@ public class settings extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 Intent in = new Intent(settings.this, phonevalidation.class);
+                in.putExtra("User", user);
                 startActivity(in);
 
             }
@@ -64,6 +75,7 @@ public class settings extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 Intent in = new Intent(settings.this, changeinsurance.class);
+                in.putExtra("User", user);
                 startActivity(in);
 
             }
